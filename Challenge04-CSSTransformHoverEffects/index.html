@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transform Hover Effects</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 40px;
+      font-family: sans-serif;
+    }
+
+    /* تنظیمات اولیه برای همه‌ی باکس‌ها */
+    .box {
+      width: 80px;                          /* عرض باکس */
+      height: 80px;                         /* ارتفاع باکس */
+      background-color: #66d9ef;           /* رنگ پس‌زمینه */
+      transition: transform 0.3s ease;     /* ایجاد انیمیشن هنگام اعمال transform با مدت ۰.۳ ثانیه */
+    }
+
+    /* هنگام هاور روی باکس شماره ۱: جابجایی (ترنسلیت) در محور X و Y */
+    .box-1:hover {
+      transform: translate(-10px, -20px);  /* جابجایی به سمت چپ و بالا */
+    }
+
+    /* هنگام هاور روی باکس شماره ۲: چرخش (روتیت) به اندازه ۳۰ درجه */
+    .box-2:hover {
+      transform: rotate(30deg);            /* چرخش ساعت‌گرد */
+    }
+
+    /* هنگام هاور روی باکس شماره ۳: کج شدن (اسکیو) در دو محور */
+    .box-3:hover {
+      transform: skew(-10deg, -10deg);     /* کج شدن در محور افقی و عمودی */
+    }
+
+    /* هنگام هاور روی باکس شماره ۴: کوچک شدن (اسکیل) به اندازه ۸۰٪ */
+    .box-4:hover {
+      transform: scale(0.8);               /* مقیاس‌دهی کوچکتر */
+    }
+
+    /* هنگام هاور روی باکس شماره ۵: اعمال تبدیل ماتریسی */
+    .box-5:hover {
+      transform: matrix(0, 1, 1, 0, 0, 0);  /* تبدیل پیچیده‌تر با استفاده از ماتریس */
+    }
+
+
+    /*
+      matrix(a, b, c, d, e, f)
+
+      ⟶ تاثیرش مثل اینه که transform: 
+          matrix(
+            scaleX, skewY,
+            skewX, scaleY,
+            translateX, translateY
+          )
+        در این حالت:
+
+        a = 0 → scaleX = 0 (هیچ کششی در محور X)
+
+        b = 1 → skewY = 1 (کج‌شدگی در Y نسبت به X)
+
+        c = 1 → skewX = 1 (کج‌شدگی در X نسبت به Y)
+
+        d = 0 → scaleY = 0 (هیچ کششی در محور Y)
+
+        e = 0, f = 0 → بدون جابه‌جایی (translate)
+    */
+
+  </style>
+</head>
+<body>
+  <div class="box box-1"></div>
+  <div class="box box-2"></div>
+  <div class="box box-3"></div>
+  <div class="box box-4"></div>
+  <div class="box box-5"></div>
+</body>
+</html>
